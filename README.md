@@ -95,8 +95,16 @@ result = jev.decide(
 
 ## Documentation
 
+- [Documentation site](https://praveen-hari.github.io/codestudio-jev-sdk/)
 - [Getting started](docs/getting-started.md)
 - [JEV Decisions API usage](docs/api-usage.md)
+
+Build the MkDocs site locally:
+
+```bash
+python3 -m pip install -r requirements-docs.txt
+mkdocs serve
+```
 
 ## Security
 

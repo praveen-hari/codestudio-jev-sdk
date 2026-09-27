@@ -245,7 +245,7 @@ The response also carries `x-request-id` and `x-model-name` headers.
 
 The repository contains dependency-free local SDK packages that handle JSON serialization, timestamp generation, body hashing, HMAC signing, timeout handling, and structured API errors.
 
-For installation, configuration, error handling, and complete examples, see the [SDK Getting Started guide](jev-sdk-getting-started.md).
+For installation, configuration, error handling, and complete examples, see the [SDK Getting Started guide](getting-started.md).
 
 ### TypeScript SDK
 
@@ -273,7 +273,7 @@ const result = await jev.decide({
 console.log(result.answers.urgency);
 ```
 
-Package documentation: [`sdk/typescript/README.md`](../sdk/typescript/README.md).
+See the [TypeScript SDK reference](sdk/typescript.md).
 
 ### Python SDK
 
@@ -301,7 +301,7 @@ result = jev.decide(
 print(result.answers["urgency"])
 ```
 
-Package documentation: [`sdk/python/README.md`](../sdk/python/README.md).
+See the [Python SDK reference](sdk/python.md).
 
 Both SDKs read:
 
@@ -313,7 +313,7 @@ CODESTUDIO_API_KEY_SECRET
 
 ## Python script
 
-The runnable example is available at [`examples/jev/jev_decisions.py`](../examples/jev/jev_decisions.py).
+The runnable example is available in the repository at [`examples/jev_decisions.py`](https://github.com/praveen-hari/codestudio-jev-sdk/blob/main/examples/jev_decisions.py).
 
 Set credentials and run:
 
@@ -329,7 +329,7 @@ The SDK uses only the Python standard library at runtime.
 
 ## TypeScript script
 
-The runnable example is available at [`examples/jev/jev-decisions.ts`](../examples/jev/jev-decisions.ts).
+The runnable example is available in the repository at [`examples/jev-decisions.ts`](https://github.com/praveen-hari/codestudio-jev-sdk/blob/main/examples/jev-decisions.ts).
 
 Requirements: Node.js 22+ and a TypeScript runner such as `tsx`.
 

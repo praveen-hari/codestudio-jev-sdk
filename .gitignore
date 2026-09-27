@@ -6,6 +6,7 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .venv/
+site/
 .DS_Store
 .env
 .env.*

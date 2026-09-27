@@ -444,6 +444,6 @@ The SDKs:
 
 # Further reading
 
-- [JEV Decisions API usage guide](jev-decisions-api-usage.md)
-- [TypeScript SDK README](../sdk/typescript/README.md)
-- [Python SDK README](../sdk/python/README.md)
+- [JEV Decisions API usage guide](api-usage.md)
+- [TypeScript SDK reference](sdk/typescript.md)
+- [Python SDK reference](sdk/python.md)

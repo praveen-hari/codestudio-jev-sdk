@@ -102,7 +102,12 @@ class JevClient:
             f"{self._base_url}{_DECISIONS_PATH}",
             data=body,
             method="POST",
-            headers={"Content-Type": "application/json", **authentication},
+            headers={
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "User-Agent": "codestudio-jev-python/0.1.0",
+                **authentication,
+            },
         )
 
         try:

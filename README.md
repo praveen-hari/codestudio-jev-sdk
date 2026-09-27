@@ -29,7 +29,7 @@ docs/         Getting-started and API usage guides
 
 ## Credentials
 
-Create an API key with the least-privilege `jev:invoke` scope, then set:
+Ask an organization administrator to create an API key from the CodeStudio Enterprise **API Keys** page with the least-privilege `jev:invoke` scope. After the administrator securely provides the client ID and one-time secret, set:
 
 ```bash
 export CODESTUDIO_BASE_URL="https://enterprise.example.com"

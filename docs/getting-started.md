@@ -20,39 +20,25 @@ You need:
   - `admin:*` — supported but not recommended for automation
 - Node.js 22+ for TypeScript, or Python 3.11+ for Python
 
-## 1. Create an API key
+## 1. Ask an administrator for an API key
 
-An organization administrator creates the key through:
+API keys cannot be created directly by SDK users or automation scripts. An organization administrator must sign in to the CodeStudio Enterprise web UI, open the **API Keys** page, and create a key for the integration.
 
-```text
-POST /v1/apikeys
-```
+Ask the administrator to configure:
 
-Request:
+- Name: for example, `JEV SDK`
+- Scope: `jev:invoke` — recommended
+- An appropriate request rate limit
+- An expiration date that matches the automation lifetime
 
-```json
-{
-  "name": "JEV SDK",
-  "scopes": ["jev:invoke"],
-  "rateLimitPerMinute": 120,
-  "expirationDays": 30
-}
-```
+The UI displays two values after creation:
 
-Save the returned values immediately:
+- **Client ID** — starts with `key_`
+- **Secret** — displayed only once
 
-```json
-{
-  "result": {
-    "clientId": "key_0123456789abcdef",
-    "rawSecret": "base64url-secret-shown-once"
-  }
-}
-```
+The administrator must transfer both values through an approved secret-sharing channel. Store them in a secret manager immediately. If the secret is lost, ask the administrator to rotate the key; it cannot be retrieved again.
 
-The raw secret is displayed only when the key is created or rotated.
-
-## 2. Configure credentials
+## 2. Configure the provided credentials
 
 Both SDKs use the same environment variables:
 

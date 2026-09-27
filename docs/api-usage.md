@@ -22,32 +22,11 @@ Use the recommended REST route:
 |---|---|---|
 | POST | `/v1/decisions` | Evaluate state with one or more typed JEV questions |
 
-## Create an API key
+## Obtain an API key
 
-An organization administrator creates a key through `POST /v1/apikeys`:
+SDK users and automation scripts cannot create API keys directly. Ask an organization administrator to sign in to the CodeStudio Enterprise web UI, open the **API Keys** page, and create a key for the integration.
 
-```json
-{
-  "name": "JEV Automation",
-  "scopes": ["jev:invoke"],
-  "rateLimitPerMinute": 120,
-  "expirationDays": 30
-}
-```
-
-The response includes:
-
-```json
-{
-  "result": {
-    "clientId": "key_0123456789abcdef",
-    "rawSecret": "base64url-secret-shown-once",
-    "scopes": ["jev:invoke"]
-  }
-}
-```
-
-Store both values immediately. The raw secret is returned only when the key is created or rotated.
+For JEV-only automation, ask for the `jev:invoke` scope, an appropriate rate limit, and an expiration date. The UI displays the client ID and secret after creation. The secret is shown only once, so it must be transferred through an approved secret-sharing channel and stored in a secret manager immediately.
 
 ### Supported scopes
 

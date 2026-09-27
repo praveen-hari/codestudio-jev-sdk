@@ -1,0 +1,42 @@
+{
+  "name": "@syncfusion/codestudio-jev",
+  "version": "0.1.0",
+  "description": "TypeScript client for the SyncfusionCodeStudio JEV Decisions API",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praveen-hari/codestudio-jev-sdk.git",
+    "directory": "typescript"
+  },
+  "homepage": "https://github.com/praveen-hari/codestudio-jev-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/praveen-hari/codestudio-jev-sdk/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.test.json && node --test .test-dist/test/**/*.test.js",
+    "check": "npm run build && npm test",
+    "prepack": "npm run check"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "license": "MIT"
+}

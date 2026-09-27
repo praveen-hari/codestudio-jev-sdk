@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "syncfusion-codestudio-jev"
+version = "0.1.0"
+description = "Python client for the SyncfusionCodeStudio JEV Decisions API"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Praveen Hari" }]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/praveen-hari/codestudio-jev-sdk"
+Repository = "https://github.com/praveen-hari/codestudio-jev-sdk"
+Issues = "https://github.com/praveen-hari/codestudio-jev-sdk/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

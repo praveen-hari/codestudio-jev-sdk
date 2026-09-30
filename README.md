@@ -8,6 +8,12 @@ Both SDKs call the recommended endpoint:
 POST /v1/decisions
 ```
 
+## Contents
+
+- [Features](#features) · [Primitives](#primitives) · [Repository layout](#repository-layout) · [Credentials](#credentials)
+- [TypeScript](#typescript) · [Python](#python) · [Error handling](#error-handling) · [Examples](#examples)
+- [Documentation](#documentation) · [Security](#security) · [License](#license)
+
 ## Features
 
 - Noul, Choice, and Score primitives
@@ -18,13 +24,21 @@ POST /v1/decisions
 - HTTPS enforcement outside localhost
 - No runtime dependencies
 
+## Primitives
+
+| Type | Purpose | `criteria` |
+| --- | --- | --- |
+| `noul` | Yes/no style question about the state | not used |
+| `choice` | Pick one option | map of option name to description |
+| `score` | Rate on a scale | list of scale labels, e.g. `["Low", "Medium", "Critical"]` |
+
 ## Repository layout
 
 ```text
 typescript/   TypeScript package: @syncfusion/codestudio-jev
 python/       Python package: syncfusion-codestudio-jev
 examples/     TypeScript and Python examples
-docs/         Getting-started and API usage guides
+docs/         MkDocs site sources (guides, API reference, troubleshooting)
 ```
 
 ## Credentials
@@ -92,6 +106,17 @@ result = jev.decide(
     },
 )
 ```
+
+## Error handling
+
+Both clients raise structured errors for configuration problems (missing credentials, non-HTTPS base URL) and for API error responses. See the [troubleshooting guide](docs/troubleshooting.md) for details.
+
+## Examples
+
+Runnable examples covering all three primitives:
+
+- [`examples/jev-decisions.ts`](examples/jev-decisions.ts)
+- [`examples/jev_decisions.py`](examples/jev_decisions.py)
 
 ## Documentation
 

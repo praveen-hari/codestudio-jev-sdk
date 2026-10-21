@@ -98,6 +98,10 @@ result = jev.decide(
 - [Documentation site](https://praveen-hari.github.io/codestudio-jev-sdk/)
 - [Getting started](docs/getting-started.md)
 - [JEV Decisions API usage](docs/api-usage.md)
+- [SDK Reference](docs/sdk/index.md)
+- [Guides and automation patterns](docs/guides/software-development.md)
+- [Troubleshooting](docs/troubleshooting.md)
+- [Examples](examples/)
 
 Build the MkDocs site locally:
 

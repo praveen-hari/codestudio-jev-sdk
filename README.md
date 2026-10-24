@@ -23,8 +23,9 @@ POST /v1/decisions
 ```text
 typescript/   TypeScript package: @syncfusion/codestudio-jev
 python/       Python package: syncfusion-codestudio-jev
-examples/     TypeScript and Python examples
-docs/         Getting-started and API usage guides
+examples/     TypeScript (jev-decisions.ts) and Python (jev_decisions.py) examples
+docs/         MkDocs source: guides, API reference, SDK pages, troubleshooting
+mkdocs.yml    MkDocs site configuration
 ```
 
 ## Credentials
@@ -98,6 +99,8 @@ result = jev.decide(
 - [Documentation site](https://praveen-hari.github.io/codestudio-jev-sdk/)
 - [Getting started](docs/getting-started.md)
 - [JEV Decisions API usage](docs/api-usage.md)
+- [Examples](docs/examples.md)
+- [Troubleshooting](docs/troubleshooting.md)
 
 Build the MkDocs site locally:
 

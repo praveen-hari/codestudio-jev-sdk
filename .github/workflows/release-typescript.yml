@@ -1,0 +1,63 @@
+name: Release TypeScript SDK
+
+# Push a tag vX.Y.Z (matching typescript/package.json's version) to build, test and attach the
+# packed SDK to a GitHub Release. Install it from the release, no registry or token needed:
+#   npm install https://github.com/praveen-hari/codestudio-jev-sdk/releases/download/vX.Y.Z/syncfusion-codestudio-jev-X.Y.Z.tgz
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: typescript
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: typescript/package-lock.json
+
+      - run: npm ci
+
+      - name: Tag matches the package version
+        run: |
+          version="v$(node -p 'require("./package.json").version')"
+          if [ "$version" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match package.json version $version" >&2
+            exit 1
+          fi
+
+      # prepack runs `npm run check` (build + tests) before packing.
+      - run: npm pack
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          file="$(ls syncfusion-codestudio-jev-*.tgz)"
+          url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF_NAME}/${file}"
+          cat > notes.md <<NOTES
+          TypeScript SDK \`@syncfusion/codestudio-jev\` ${GITHUB_REF_NAME}.
+
+          Install:
+
+          \`\`\`bash
+          npm install ${url}
+          \`\`\`
+          NOTES
+          gh release create "$GITHUB_REF_NAME" "$file" \
+            --title "TypeScript SDK $GITHUB_REF_NAME" \
+            --notes-file notes.md

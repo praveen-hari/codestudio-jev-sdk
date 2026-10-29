@@ -2,11 +2,23 @@
 
 Dependency-free Node.js SDK for the SyncfusionCodeStudio JEV Decisions API.
 
-## Install locally
+## Install
+
+From a GitHub Release (no registry or token needed):
 
 ```bash
-npm install ./sdk/typescript
+npm install https://github.com/praveen-hari/codestudio-jev-sdk/releases/download/v0.1.0/syncfusion-codestudio-jev-0.1.0.tgz
 ```
+
+From a local checkout:
+
+```bash
+npm install /path/to/codestudio-jev-sdk/typescript
+```
+
+To release a new version, bump `version` in `package.json`, then push a tag `vX.Y.Z` with the same
+version: `.github/workflows/release-typescript.yml` builds, tests and attaches the package to the
+release.
 
 ## Usage
 

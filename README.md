@@ -48,7 +48,13 @@ npm test
 npm run build
 ```
 
-Install the local package from another project:
+Install the released package (see [Releases](https://github.com/praveen-hari/codestudio-jev-sdk/releases)):
+
+```bash
+npm install https://github.com/praveen-hari/codestudio-jev-sdk/releases/download/v0.1.0/syncfusion-codestudio-jev-0.1.0.tgz
+```
+
+Or the local package from another project:
 
 ```bash
 npm install /path/to/codestudio-jev-sdk/typescript
